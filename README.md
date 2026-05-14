@@ -19,4 +19,15 @@
     * Parsing dos dados: como selecionar e extrair as informações desejadas com organização.
     * Por fim, salvamento em formato CSV para melhor visualização.
     
-* Para usar, baixe este repositório, instale as dependências no seu ambiente e ajuste, se necessário, as constantes de pathing.
+* Para usar:
+* Clone este repositório na sua máquina:
+    * git clone https://github.com/username/repository-name.git 
+    * cd repository-name
+* Faça o download das dependências no seu terminal:
+    * wget https://raw.githubusercontent.com/username/repo/main/requirements.txt 
+    * ou
+    * curl -O https://raw.githubusercontent.com/username/repo/main/requirements.txt
+* Faça o setup de um ambiente virtual, da maneira clássica, por exemplo:
+    * python3 -m venv .venv
+    * source .venv/bin/activate
+    * pip install -r requirements.txt
