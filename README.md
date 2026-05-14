@@ -23,7 +23,7 @@
 * Clone este repositório na sua máquina:
     * git clone https://github.com/username/repository-name.git 
     * cd repository-name
-* Faça o download das dependências no seu terminal:
+* Faça o download das dependências no seu terminal com a URL da aba "RAW" do arquivo requirements:
     * wget https://raw.githubusercontent.com/username/repo/main/requirements.txt 
     * ou
     * curl -O https://raw.githubusercontent.com/username/repo/main/requirements.txt
