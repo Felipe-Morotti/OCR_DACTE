@@ -5,3 +5,4 @@
     * Extração de texto das imagens PNG com OCR, onde foi usado o modelo LightOnOCR-2-1B
     * Parsing dos dados: como selecionar e extrair as informações desejadas com organização.
     * Por fim, salvamento em formato CSV para melhor visualização.
+* Para usar, baixe este repositório, instale as dependências no seu ambiente e ajuste, se necessário, as constantes de pathing.
