@@ -147,8 +147,7 @@ def salvarCSV(parsed: dict[str, dict], output_path: Path, logger: logging.Logger
 
 def main() -> None:
     with log_timer(logger_pronto, "OCR dos DACTEs."):
-        with log_timer(logger_pronto, "Processamento OCR de imagem."):
-            dados_raw = performOCR(IMGS_PATH, logger_pronto)
+        dados_raw = performOCR(IMGS_PATH, logger_pronto)
 
     with log_timer(logger_pronto, "Parseamento dos dados."):
         parseado = parse_results(dados_raw, logger_pronto)
