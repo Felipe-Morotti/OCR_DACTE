@@ -31,3 +31,4 @@
     * python3 -m venv .venv
     * source .venv/bin/activate
     * pip install -r requirements.txt
+* O resultado em CSV está pronto, exclua os dados do arquivo antes de executar "ocr_dacte_to_csv.py".
