@@ -288,42 +288,72 @@ OCR_DACTE/
 
 ## 9. Como Executar
 
-Com o ambiente virtual ativo e os PDFs na pasta correta, execute o script principal:
+O pipeline é dividido em **duas etapas independentes**. A pasta `pdfs_para_conversao/` e a pasta `imgs_convertidas/` **já estão preenchidas no repositório**, então você pode pular a Etapa 1 e rodar apenas a Etapa 2 se quiser ir direto para o OCR.
+
+---
+
+### Etapa 1 — Conversão de PDF para PNG (opcional)
+
+> ⚠️ **Pule esta etapa** se não quiser adicionar novos DACTEs. As imagens já convertidas estão disponíveis em `imgs_convertidas/`.
+
+Se você quiser converter seus próprios arquivos PDF, coloque-os na pasta `pdfs_para_conversao/` e execute:
 
 ```bash
-python script_principal.py
+python conversor_pdf_to_png/main.py
 ```
 
-### O que acontece durante a execução
-
-O terminal exibirá logs informando o progresso de cada etapa:
+O terminal exibirá o progresso da conversão:
 
 ```
 [INFO] Iniciando conversão de PDFs para PNG...
 [INFO] dacte_001.pdf → dacte_001.png ✓
-[INFO] Carregando modelo LightOnOCR-2-1B...
-[INFO] Processando imagem 1/N...
-[INFO] Parsing dos dados extraídos...
-[INFO] Exportando resultados para CSV...
-[INFO] Concluído. Arquivo salvo em: saidas/resultados/resultado.csv
+[INFO] dacte_002.pdf → dacte_002.png ✓
+[INFO] Conversão concluída. X arquivo(s) gerado(s) em imgs_convertidas/
 ```
 
-> 💡 O **primeiro carregamento do modelo** pode demorar mais, pois o Hugging Face fará o download dos pesos automaticamente (~2 GB). Nas execuções seguintes, o modelo será carregado do cache local.
+As imagens geradas serão salvas automaticamente em `imgs_convertidas/` e os logs desta etapa serão registrados na pasta `LOG/`.
 
 ---
+
+### Etapa 2 — OCR, Parsing e Exportação para CSV
+
+Com as imagens disponíveis em `imgs_convertidas/` (sejam as do repositório ou as que você converteu na Etapa 1), execute o pipeline principal:
+
+```bash
+python src/main.py
+```
+
+O terminal exibirá o progresso de cada sub-etapa:
+
+```
+[INFO] Carregando modelo LightOnOCR-2-1B...
+[INFO] Processando imagem 1/N...
+[INFO] Processando imagem 2/N...
+[INFO] Parsing dos dados extraídos...
+[INFO] Exportando resultados para CSV...
+[INFO] Concluído. Arquivo salvo em: DACTEsCSV/DACTEs.csv
+```
+
+> ⏳ O **primeiro carregamento do modelo** pode demorar mais, pois o Hugging Face fará o download dos pesos automaticamente (~2 GB). Nas execuções seguintes, o modelo será carregado do cache local.
 
 ## 10. Saídas Esperadas
 
-Ao final da execução, os seguintes arquivos serão gerados:
+### Etapa 1 — Conversão de PDF para PNG
 
 | Pasta | Conteúdo |
 |---|---|
-| `saidas/imagens/` | Arquivos `.png` de cada página dos PDFs processados |
-| `saidas/resultados/` | Arquivo `.csv` com os dados extraídos e organizados de cada DACTE |
-
-O arquivo CSV terá colunas correspondentes aos campos extraídos dos DACTEs, permitindo fácil visualização em ferramentas como Excel, LibreOffice Calc ou Google Sheets.
+| `imgs_convertidas/` | Arquivos `.png` de cada página dos PDFs processados |
+| `LOG/` | Arquivo de log com o registro da conversão (arquivos processados, erros, tempo de execução) |
 
 ---
+
+### Etapa 2 — OCR, Parsing e Exportação para CSV
+
+| Pasta | Conteúdo |
+|---|---|
+| `DACTEsCSV/` | Arquivo `DACTEs.csv` com os dados extraídos e organizados de cada DACTE |
+
+O arquivo `DACTEs.csv` terá colunas correspondentes aos campos extraídos dos DACTEs, permitindo fácil visualização em ferramentas como Excel, LibreOffice Calc ou Google Sheets.
 
 ## 11. Solução de Problemas Comuns
 
