@@ -23,6 +23,6 @@ def converte_pdf_to_png(
         output_file = imgs_path / f"{pdf_file.stem}.{img_format.lower()}"
         image.save(output_file, format=img_format)
         doc.close()
-        logger.info(f"Imagem {1} gerada. \u2705")
+        logger.info(f"Imagem {i} gerada. \u2705")
 
 
