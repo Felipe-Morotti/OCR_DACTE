@@ -292,7 +292,6 @@ OCR_DACTE/
 ├── README.md               # Descrição geral do projeto
 
 └── TUTORIAL.md             # Este arquivo
-
 ​```
 
 > 📁 **Antes de executar**, coloque seus arquivos PDF de DACTE dentro da pasta `pdfs_para_conversao/`.
