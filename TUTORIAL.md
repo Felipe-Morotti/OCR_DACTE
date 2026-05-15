@@ -255,8 +255,8 @@ python -c "import torch; print('GPU disponível:', torch.cuda.is_available()); p
 Após clonar o repositório, você encontrará a seguinte estrutura de arquivos:
 
 ​```
-OCR_DACTE/
 
+OCR_DACTE/
 │
 
 ├── pdfs_para_conversao/            # Pasta para os PDFs de entrada (DACTEs)
@@ -292,6 +292,7 @@ OCR_DACTE/
 ├── README.md               # Descrição geral do projeto
 
 └── TUTORIAL.md             # Este arquivo
+
 ​```
 
 > 📁 **Antes de executar**, coloque seus arquivos PDF de DACTE dentro da pasta `pdfs_para_conversao/`.
