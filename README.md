@@ -29,6 +29,7 @@
     * [vLLM](https://vllm.ai/), ou Virtual Large Language Model é um motor de inferência especializado. Ele não se importa com treinamento, apenas com gerar output o mais rápido e eficientemente possível. É usado principal em larga escala em ambientes de deployment rápidos e massivos, com um rendimento de 10 até 20x mais requisições por segundo do que a biblioteca transformers padrão. Seu "segredo" é o PagedAttention, o que resolve o gargalo de memória das LLMs com a ideia de memória virtual.
 
 * As instruções de como replicar este trabalho na sua máquina está em TUTORIAL.md
+* Observe o que tem em cada pasta que está clonando. A de imagens já está pronta para o OCR, pois a conversão já foi feita.
 
 * Citação: @misc{lightonocr2_2026,
         title        = {LightOnOCR: A 1B End-to-End Multilingual Vision-Language Model for State-of-the-Art OCR},
