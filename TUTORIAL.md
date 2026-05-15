@@ -256,24 +256,43 @@ Após clonar o repositório, você encontrará a seguinte estrutura de arquivos:
 
 ​```
 OCR_DACTE/
+
 │
+
 ├── pdfs_para_conversao/            # Pasta para os PDFs de entrada (DACTEs)
+
 │
+
 ├── imgs_convertidas/               # PNGs gerados a partir dos PDFs
+
 │
+
 ├── DACTEsCSV/                      # Arquivos CSV com os dados extraídos
+
 │
+
 ├── LOG/                            # Logs gerados durante a execução
+
 │
+
 ├── src/                            # Scripts Python do projeto
+
 │   ├── ocr_dacte_to_csv.py         # OCR + parsing + exportação
+
 │   ├── conversor_pdf_to_img.py     # Conversão pdf para imagem
+
 │   └── logger_config.py            # Funções utilitárias (logging, timers)
+
 │
+
 ├── .gitignore
+
 ├── requirements.txt        # Lista de dependências do projeto
+
 ├── README.md               # Descrição geral do projeto
+
 └── TUTORIAL.md             # Este arquivo
+
 ​```
 
 > 📁 **Antes de executar**, coloque seus arquivos PDF de DACTE dentro da pasta `pdfs_para_conversao/`.
