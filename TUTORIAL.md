@@ -257,20 +257,29 @@ Após clonar o repositório, você encontrará a seguinte estrutura de arquivos:
 ```
 OCR_DACTE/
 │
-├── pdfs_para_conversao/    # Pasta para os PDFs de entrada (DACTEs)
-├── imgs_convertidas/       # PNGs gerados a partir dos PDFs
-├── DACTEsCSV/              # Arquivos CSV com os dados extraídos
-├── LOG/                    # Logs gerados durante a execução
+├── conversor_pdf_to_png/        # Módulo de conversão de PDF para PNG
+│   ├── conversor_pdf_to_png.py  # Lógica de conversão
+│   └── main.py                  # Ponto de entrada do conversor
 │
-├── src/                    # Scripts Python do projeto
-│   ├── script_principal.py # Pipeline completo (conversão + OCR + parsing + exportação)
-│   ├── script_ocr.py       # Módulo de OCR (carregamento do modelo e inferência)
-│   └── script_utils.py     # Funções utilitárias (logging, timers, helpers)
+├── src/                         # Scripts principais do pipeline OCR
+│   ├── main.py                  # Orquestra o pipeline completo
+│   ├── ocr_dacte.py             # Carregamento do modelo e inferência OCR
+│   ├── parser_output_do_ocr.py  # Parsing e organização do texto extraído
+│   └── salvar_csv.py            # Exportação dos dados para CSV
+│
+├── Tools/                       # Utilitários auxiliares
+│   └── utils.py                 # Funções de logging, timers e helpers
+│
+├── pdfs_para_conversao/         # Coloque aqui os PDFs de entrada (DACTEs)
+├── imgs_convertidas/            # PNGs gerados a partir dos PDFs
+├── DACTEsCSV/                   # Arquivos CSV com os dados extraídos
+│   └── DACTEs.csv
+├── LOG/                         # Logs gerados durante a execução
 │
 ├── .gitignore
-├── requirements.txt        # Lista de dependências do projeto
-├── README.md               # Descrição geral do projeto
-└── TUTORIAL.md             # Este arquivo
+├── requirements.txt             # Lista de dependências do projeto
+├── README.md                    # Descrição geral do projeto
+└── TUTORIAL.md                  # Este arquivo
 ```
 
 > 📁 **Antes de executar**, coloque seus arquivos PDF de DACTE dentro da pasta `pdfs_para_conversao/`.
