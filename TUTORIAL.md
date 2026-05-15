@@ -190,7 +190,7 @@ Um **ambiente virtual** isola as dependências deste projeto das demais instala�
 Dentro da pasta do projeto, execute:
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 Isso criará uma pasta chamada `venv/` no diretório do projeto.
